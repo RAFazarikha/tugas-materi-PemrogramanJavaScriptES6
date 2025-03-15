@@ -42,8 +42,10 @@
         let BPJS = 0.1 * gajiPokok;
         let tunjanganKeluarga = (status == "Menikah") ? 0.2 * gajiPokok : 0;
 
+        // Deklarasi variabel totalGaji
         let totalGaji = gajiPokok + tunjanganJabatan - BPJS + tunjanganKeluarga;
 
+        // Menampilkan data pegawai
         document.write(
             "<table>" +
                 "<thead>" +
