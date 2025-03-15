@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Deklarasi variabel
+        let namaPegawai = "Dodi Prayodi";
+        let umur = 25;
+        let jabatan = "Manajer";
+        let status = "Menikah";
+
+        // Deklarasi variabel gajiPokok dan menentukan gaji pokok berdasarkan jabatan
+        let gajiPokok;
+        if (jabatan == "Manajer") {
+            gajiPokok = 15000000;
+        } else if (jabatan == "Asisten Manajer") {
+            gajiPokok = 10000000;
+        } else {
+            gajiPokok = 5000000;
+        }
+
+        // Deklarasi variabel tunjanganJabatan, BPJS, dan tunjanganKeluarga
+        let tunjanganJabatan = 0.15 * gajiPokok;
+        let BPJS = 0.1 * gajiPokok;
+        let tunjanganKeluarga = (status == "Menikah") ? 0.2 * gajiPokok : 0;
+
+        let totalGaji = gajiPokok + tunjanganJabatan - BPJS + tunjanganKeluarga;
+
+        document.write(
+            "<table>" +
+                "<thead>" +
+                    "<tr>" +
+                        "<td>Nama Pegawai</td>" +
+                        "<td>Umur</td>" +
+                        "<td>Jabatan</td>" +
+                        "<td>Status</td>" +
+                        "<td>Keterangan Gaji</td>" +
+                        "<td>Nominal Gaji</td>" +
+                    "</tr>" +
+                "</thead>" +
+                "<tbody>" +
+                    "<tr>" +
+                        "<td rowspan=4>"+ namaPegawai +"</td>" +
+                        "<td rowspan=4>"+ umur +"</td>" +
+                        "<td rowspan=4>"+ jabatan +"</td>" +
+                        "<td rowspan=4>"+ status +"</td>" +
+                        "<td>Gaji Pokok</td>" +
+                        "<td>"+ gajiPokok +"</td>" +
+                    "</tr>" +
+                    "<tr>" +
+                        "<td>Tunjangan Jabatan</td>" +
+                        "<td>"+ tunjanganJabatan +"</td>" +
+                    "</tr>" +
+                    "<tr>" +
+                        "<td>BPJS</td>" +
+                        "<td>"+ BPJS +"</td>" +
+                    "</tr>" +
+                    "<tr>" +
+                        "<td>Tunjangan Keluarga</td>" +
+                        "<td>"+ tunjanganKeluarga +"</td>" +
+                    "</tr>" +
+                "</tbody>" +
+                "<tfoot>" +
+                    "<tr>" +
+                        "<td colspan=5>Total Gaji Pegawai :</td>" +
+                        "<td>" + totalGaji + "</td>" +
+                    "</tr>" +
+                "<tfoot>" +
+            "</table>"
+        );
+    </script>
+</body>
+</html>
