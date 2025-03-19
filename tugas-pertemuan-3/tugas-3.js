@@ -44,3 +44,5 @@ function hapusProduk(id) {
 }
 
 window.onload = tampilkanProduk;
+
+console.log(produkToko);
