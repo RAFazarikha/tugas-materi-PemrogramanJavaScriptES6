@@ -1,3 +1,4 @@
+// membuat class Pelanggan untuk merepresentasikan data pelanggan yang menyewa kendaraan
 class Pelanggan {
     constructor(nama, nomorTelepon, kendaraanDisewa) {
         this.nama = nama;
@@ -6,6 +7,7 @@ class Pelanggan {
     }
 }
 
+// membuat class ManajemenTransportasi untuk mengelola data pelanggan yang menyewa kendaraan
 class ManajemenTransportasi {
     constructor() {
         this.pelangganList = [];
@@ -38,19 +40,6 @@ class ManajemenTransportasi {
         console.log("==================================");
     }
 
-    updatePelanggan(namaLama, namaBaru, nomorTeleponBaru, kendaraanBaru) {
-        let pelanggan = this.pelangganList.find(p => p.nama === namaLama);
-        if (pelanggan) {
-            pelanggan.nama = namaBaru || pelanggan.nama;
-            pelanggan.nomorTelepon = nomorTeleponBaru || pelanggan.nomorTelepon;
-            pelanggan.kendaraanDisewa = kendaraanBaru || pelanggan.kendaraanDisewa;
-            console.log(`Pelanggan ${namaLama} berhasil diperbarui.`);
-            console.log("==================================");
-        } else {
-            console.log("Pelanggan tidak ditemukan.");
-            console.log("==================================");
-        }
-    }
 }
 
 // membuat objek sistemTransportasi untuk mencatat pelanggan yang menyewa kendaraan
@@ -71,9 +60,4 @@ sistemTransportasi.hapusPelanggan("Siti");
 console.log("Setelah Menghapus Pelanggan:");
 sistemTransportasi.tampilkanPelanggan();
 
-// memperbarui data pelanggan di sistemTransportasi
-sistemTransportasi.updatePelanggan("Budi", "Budi Santoso", "08129876543", "Bus");
 
-// menampilkan daftar pelanggan yang menyewa kendaraan
-console.log("Setelah Memperbarui Pelanggan:");
-sistemTransportasi.tampilkanPelanggan();
