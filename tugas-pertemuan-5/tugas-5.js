@@ -32,6 +32,7 @@ function tampilkanProduk() {
     produkList.forEach(({ id, nama, harga }) => {
         console.log(`ID: ${id}, Nama: ${nama}, Harga: Rp${harga}`);
     });
+    console.log("===================================");
 } 
 
 // Menjalankan fungsi untuk demonstrasi
