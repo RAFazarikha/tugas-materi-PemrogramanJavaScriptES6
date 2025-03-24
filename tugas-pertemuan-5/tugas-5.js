@@ -29,9 +29,11 @@ function hapusProduk(...idList) {
 // Menampilkan Produk dengan Destructuring
 function tampilkanProduk() { 
     console.log("Daftar Produk:");
-    produkList.forEach(({ id, nama, harga }) => {
+
+    for (const { id, nama, harga } of produkList) {
         console.log(`ID: ${id}, Nama: ${nama}, Harga: Rp${harga}`);
-    });
+    }
+
     console.log("===================================");
 } 
 
